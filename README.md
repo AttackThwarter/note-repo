@@ -10,6 +10,12 @@ it just for my notes about all i read and exsercise
 
 
 
+
+
+
+
+## How to Use
+
 # New Season in New GitHub Account 😎
 
 1. Go to Intended directory
