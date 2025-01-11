@@ -9,7 +9,39 @@ it just for my notes about all i read and exsercise
 
 
 
-## How to Use
+
+# New Season in New GitHub Account 😎
+
+1. Go to Intended directory
+2. scroll or open README.md in that directory
+
+
+
+- ***work in Google Colab :***
+
+  - [Download and Save Autimatic in Google Drive](./AI/google_colab/download_in_gdrive/)
+
+
+
+
+
+
+
+
+
+---
+
+<br>
+
+---
+
+---
+
+<br>
+
+---
+
+## Last Season How to Use 💤
 
 1. Go to Intended directory
 2. scroll or open README.md in that directory
