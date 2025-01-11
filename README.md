@@ -19,7 +19,7 @@ it just for my notes about all i read and exsercise
 
 - ***work in Google Colab :***
 
-  - [Download and Save Autimatic in Google Drive](.md)
+  - [Download and Save Autimatic in Google Drive](./AI/google_colab/download_in_gdrive/)
 
 
 
