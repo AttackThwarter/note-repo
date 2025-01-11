@@ -9,7 +9,43 @@ it just for my notes about all i read and exsercise
 
 
 
+<<<<<<< HEAD
 ## How to Use
+=======
+
+# New Season in New GitHub Account 😎
+
+1. Go to Intended directory
+2. scroll or open README.md in that directory
+
+
+
+- ***work in Google Colab :***
+
+  - [Download and Save Autimatic in Google Drive](.md)
+
+
+
+
+
+
+
+
+
+---
+
+<br>
+
+---
+
+---
+
+<br>
+
+---
+
+## Last Season How to Use 💤
+>>>>>>> parent of 9c9cccc (eddit)
 
 1. Go to Intended directory
 2. scroll or open README.md in that directory
