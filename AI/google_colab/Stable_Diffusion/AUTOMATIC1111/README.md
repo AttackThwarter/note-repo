@@ -3,11 +3,16 @@
 ## run [pouya_Customize_automatic1111](./pouya_Customize_automatic1111.ipynb) in the following order : 👇
 
 
-- ### you can get help with wiki link in code
+## you can get help with wiki link in code
+---
+
+# Run in Googl Colab : 💥
+
+
 - ### run this block 👇 
-  - ### ![1b](image.png)
+   ![1b](image.png)
   - ### to connect the GPU then you see system information like this :
-  - ```bash
+   ```bash
     
     +---------------------------------------------------------------------------------------+
     | NVIDIA-SMI 535.104.05             Driver Version: 535.104.05   CUDA Version: 12.2     |
@@ -37,3 +42,5 @@
     Mem:            12Gi       664Mi       9.2Gi       1.0Mi       2.8Gi        11Gi
 
     ```
+- ### run 1-1 block to clone autumatic1111 repo 👇
+   ![alt text](image-1.png)
