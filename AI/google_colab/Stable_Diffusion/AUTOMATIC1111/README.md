@@ -58,3 +58,11 @@
       - ### data_dir_gdrive: paste path of Automatic111 Defult is ```/content/drive/MyDrive/AI/automatic1111```
       - ### force_model_download_locally: ❌
       - ### force_remount: ❌
+    - ### output: 
+       ```bash
+        /content
+        Mounted at /content/drive
+        ```
+
+
+- ### run 1-3
