@@ -44,3 +44,17 @@
     ```
 - ### run 1-1 block to clone autumatic1111 repo 👇
    ![alt text](image-1.png)
+
+
+- ### run 1-2 block to setup autumatic1111 models  👇
+    ![alt text](image-2.png)
+    - ### put in the text boxes this inputs :
+      - ### data_dir : /content/data
+      - ### auth_token: signup to huggingface and get [token](https://huggingface.co/settings/tokens) then put it here
+      - ### download_if_missing: ✅
+      - ### model_url: , vae_url: ---> recommend download models and vaes whith [pouya_download_in_drive](../../download_in_gdrive/pouya_download_in_drive.ipynb) you can read document tn [README](../../download_in_gdrive/README.md)
+      - ### use_vae: ✅
+      - ### mount_google_drive: ✅
+      - ### data_dir_gdrive: paste path of Automatic111 Defult is ```/content/drive/MyDrive/AI/automatic1111```
+      - ### force_model_download_locally: ❌
+      - ### force_remount: ❌
