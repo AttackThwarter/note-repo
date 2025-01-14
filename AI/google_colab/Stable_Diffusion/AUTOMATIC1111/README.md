@@ -9,7 +9,7 @@
 # Run in Googl Colab : 💥
 
 
-- ### run this block 👇 
+- ### run fairst block 👇 
    ![1b](image.png)
   - ### to connect the GPU then you see system information like this :
    ```bash
@@ -65,4 +65,18 @@
         ```
 
 
-- ### run 1-3
+- ### run 2 block with these options 👇
+   ![alt text](image-3.png)
+   - ### no_half: ✅
+   - ### no_half_vae: ✅
+   - ### allow_code: ✅
+   - ### no_progressbar_hiding: ❌
+   - ### medvram: ❌
+   - ### lowvram: ❌
+   - ### deepdanbooru: ❌
+   - ### xformers: ✅
+   - ### disable_opt_split_attention: ❌
+   - ### gradio_queue: ✅
+
+   - ### custom_arguments: --disable-safe-unpickle --skip-torch-cuda-test --enable-insecure-extension-access --api  --precision full
+   - ```'--api   --precision full'``` are Optional
