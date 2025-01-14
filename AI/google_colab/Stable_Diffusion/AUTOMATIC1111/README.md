@@ -78,5 +78,27 @@
    - ### disable_opt_split_attention: ❌
    - ### gradio_queue: ✅
 
-   - ### custom_arguments: --disable-safe-unpickle --skip-torch-cuda-test --enable-insecure-extension-access --api  --precision full
+   - ### custom_arguments: --disable-safe-unpickle --skip-torch-cuda-test --enable-insecure-extension-access --api --precision full --autolaunch --update-check --disable-nan-check
    - ```'--api   --precision full'``` are Optional
+ - ## next authentication:
+   ![alt text](image-4.png)
+   - ### if you want to use login page 👇
+   - ### use_gradio_auth: ✅
+   - ### gradio_auth_username: select username
+   - ### gradio_auth_password: select password
+ - ## next ngrok
+   - ### if you want to use ngrok (Recommended use for stable usage) 👇
+   - ### use_ngrok: ✅
+   - ### load_token_from_gdrive: ✅
+   - ### ngrok_auth_token: enter ngrok token -> [get ngrok token](https://dashboard.ngrok.com/get-started/your-authtoken)
+   - ### ngrok_region: default or select region
+ - ## next save / load extentions 👇
+     ![alt text](image-5.png)
+     - ### load_extensions_from_gdrive:✅
+    - ### extensions: extentions link -> ```https://github.com/yfszzx/stable-diffusion-webui-images-browser, https://github.com/DominikDoom/a1111-sd-webui-tagcomplete```
+    - ### Save extensions to Google Drive 👇
+    - ### (Unexpected errors may occur)
+    - ### save_extensions_to_gdrive: ✅
+  - 
+
+
