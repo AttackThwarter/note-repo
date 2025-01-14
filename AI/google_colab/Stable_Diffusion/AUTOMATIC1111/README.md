@@ -9,7 +9,7 @@
 # Run in Googl Colab : 💥
 
 
-- ### run fairst block 👇 
+- ## run fairst block 👇 
    ![1b](image.png)
   - ### to connect the GPU then you see system information like this :
    ```bash
@@ -65,7 +65,7 @@
         ```
 
 
-- ### run 2 block with these options 👇
+- ## run block 2 with these options 👇
    ![alt text](image-3.png)
    - ### no_half: ✅
    - ### no_half_vae: ✅
@@ -99,6 +99,17 @@
     - ### Save extensions to Google Drive 👇
     - ### (Unexpected errors may occur)
     - ### save_extensions_to_gdrive: ✅
-  - 
 
+
+- ## run block 3 with these options 👇
+    ![alt text](image-6.png)
+    - ### conda_dir: ```/opt/conda```
+    - ### apply_lowram_patch: ❌
+
+
+
+
+- ## RUN
+    ![alt text](image-7.png)
+    - ### if you use ngrok see link like this : ```ngrok connected to localhost:7860! URL: https://9391-64-155-187-147.ngrok-free.app```
 
