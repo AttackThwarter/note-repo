@@ -68,7 +68,7 @@
 - ## run block 2 with these options 👇
    ![alt text](image-3.png)
 
-   - # New Flags For Automatic1111 Now In Code: ``` --disable-safe-unpickle --skip-torch-cuda-test --disable-safe-unpickle --skip-torch-cuda-test  --api --disable-safe-unpickle --enable-insecure-extension-access --no-download-sd-model --no-half-vae   --xformers  --disable-console-progressbars --skip-version-check ``` 
+   - # New Flags For Automatic1111 Now In Code: ``` --share --disable-safe-unpickle --skip-torch-cuda-test --disable-safe-unpickle --skip-torch-cuda-test  --api --disable-safe-unpickle --enable-insecure-extension-access --no-download-sd-model --no-half-vae   --xformers  --disable-console-progressbars --skip-version-check ``` 
    - ### no_half: ❌
    - ### no_half_vae: ❌
    - ### allow_code: ❌
