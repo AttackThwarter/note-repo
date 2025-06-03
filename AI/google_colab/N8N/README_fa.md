@@ -286,4 +286,4 @@ print("n8n URL:", public_url)
 ### موفق باشید!  
 هر سؤال یا نکته‌ای داشتی، اینجا بپرس :) 👇
 
-[chat](https://github.com/AttackThwarter/note-repo/discussions/1)
+## [chat](https://github.com/AttackThwarter/note-repo/discussions/1)
