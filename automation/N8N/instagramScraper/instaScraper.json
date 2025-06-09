@@ -1,0 +1,810 @@
+{
+  "name": "instaScraper",
+  "nodes": [
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1192044235,
+          "mode": "list",
+          "cachedResultName": "creators",
+          "cachedResultUrl": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -400,
+        180
+      ],
+      "id": "d775d37d-83f6-4a21-807c-ac51dea4880a",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": ""
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -180,
+        180
+      ],
+      "id": "5dc879f1-8da8-496d-bdda-40e5f282732e",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"addParentData\": false,\n    \"directUrls\": [\n        \"https://www.instagram.com/{{ $('Loop Over Items').item.json['instagram username'] }}/\"\n    ],\n    \"enhanceUserSearchWithFacebookPage\": false,\n    \"isUserReelFeedURL\": false,\n    \"isUserTaggedFeedURL\": false,\n    \"onlyPostsNewerThan\": \"1 year\",\n    \"resultsLimit\": 50,\n    \"resultsType\": \"stories\",\n    \"searchLimit\": 1,\n    \"searchType\": \"hashtag\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        300
+      ],
+      "id": "1edae590-02b2-4a1e-aca6-9b51b54159dd",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "11522dfd-f17d-43c9-a0bc-743d3ce5bc5c",
+              "name": "id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "e0bfa23c-5b23-4629-989e-abb5c0137d7e",
+              "name": "type",
+              "value": "={{ $json.type }}",
+              "type": "string"
+            },
+            {
+              "id": "06b7c86c-08f2-43b3-a46c-46cbb8bef0cf",
+              "name": "caption",
+              "value": "={{ $json.caption }}",
+              "type": "string"
+            },
+            {
+              "id": "cce6ac81-015c-420c-91a8-c2dc889ea711",
+              "name": "hashtags",
+              "value": "={{ $json.hashtags }}",
+              "type": "array"
+            },
+            {
+              "id": "6890e3b5-d4a2-4699-ba1c-8787ef1e088a",
+              "name": "mentions",
+              "value": "={{ $json.mentions }}",
+              "type": "array"
+            },
+            {
+              "id": "dc0f2c6f-571f-4b16-9f9f-3d74ee39839b",
+              "name": "url",
+              "value": "={{ $json.url }}",
+              "type": "string"
+            },
+            {
+              "id": "0d285fdd-fa6f-43df-9025-50154f724924",
+              "name": "commentsCount",
+              "value": "={{ $json.commentsCount }}",
+              "type": "number"
+            },
+            {
+              "id": "a62d1163-265b-4d36-9913-4295d8b243ef",
+              "name": "firstComment",
+              "value": "={{ $json.firstComment }}",
+              "type": "string"
+            },
+            {
+              "id": "5844a143-1e4b-4550-98ab-629a5d1fa5df",
+              "name": "latestComments",
+              "value": "={{ $json.latestComments }}",
+              "type": "array"
+            },
+            {
+              "id": "b1c79c04-2a93-4f08-a360-ca4bd2f5d1b2",
+              "name": "dimensionsHeight",
+              "value": "={{ $json.dimensionsHeight }}",
+              "type": "number"
+            },
+            {
+              "id": "eb9790cd-3972-495d-9698-08d8f3ca5769",
+              "name": "dimensionsWidth",
+              "value": "={{ $json.dimensionsWidth }}",
+              "type": "number"
+            },
+            {
+              "id": "262d2c22-49d4-4098-ac21-86700c237ac4",
+              "name": "displayUrl",
+              "value": "={{ $json.displayUrl }}",
+              "type": "string"
+            },
+            {
+              "id": "e64b2ec1-e86f-4f7b-a157-6c82dcc96a40",
+              "name": "images",
+              "value": "={{ $json.images }}",
+              "type": "array"
+            },
+            {
+              "id": "71fbfbbf-16a8-4458-8aba-e310d0936886",
+              "name": "videoUrl",
+              "value": "={{ $json.videoUrl }}",
+              "type": "string"
+            },
+            {
+              "id": "595f8315-9c39-4dfa-bb06-73dd6ba25f2c",
+              "name": "likesCount",
+              "value": "={{ $json.likesCount }}",
+              "type": "number"
+            },
+            {
+              "id": "64d0ec3e-4549-4b5b-8471-0cc75e9b2bec",
+              "name": "videoViewCount",
+              "value": "={{ $json.videoViewCount }}",
+              "type": "number"
+            },
+            {
+              "id": "e2183ec8-0ddc-4b81-9cc7-580a69edb8e5",
+              "name": "videoPlayCount",
+              "value": "={{ $json.videoPlayCount }}",
+              "type": "number"
+            },
+            {
+              "id": "60614c35-1e9f-42e3-ba1e-407715dded08",
+              "name": "timestamp",
+              "value": "={{ $json.timestamp }}",
+              "type": "string"
+            },
+            {
+              "id": "6e828321-7a04-4202-b7ee-a14791cd4f98",
+              "name": "childPosts",
+              "value": "={{ $json.childPosts }}",
+              "type": "array"
+            },
+            {
+              "id": "2ce746cd-80a2-4bd9-b0e4-2ccb5c67bdf0",
+              "name": "locationName",
+              "value": "={{ $json.locationName }}",
+              "type": "string"
+            },
+            {
+              "id": "d59ddfcf-1e95-4b72-abc3-a37e2f87d9fc",
+              "name": "locationId",
+              "value": "={{ $json.locationId }}",
+              "type": "string"
+            },
+            {
+              "id": "c7f87031-6ad8-452c-88dd-10de576f2046",
+              "name": "ownerFullName",
+              "value": "={{ $json.ownerFullName }}",
+              "type": "string"
+            },
+            {
+              "id": "a699f306-3df4-4bbf-b5d5-d766a4f71a2e",
+              "name": "ownerUsername",
+              "value": "={{ $json.ownerUsername }}",
+              "type": "string"
+            },
+            {
+              "id": "58691d65-0334-42a9-92f6-1f16b17e3875",
+              "name": "videoDuration",
+              "value": "={{ $json.videoDuration }}",
+              "type": "number"
+            },
+            {
+              "id": "3b19b30e-718f-4efe-842e-2d1576bbf7fc",
+              "name": "ownerId",
+              "value": "={{ $json.ownerId }}",
+              "type": "string"
+            },
+            {
+              "id": "7c56f23b-e489-4d5b-8e31-de9a0c36ba21",
+              "name": "productType",
+              "value": "={{ $json.productType }}",
+              "type": "string"
+            },
+            {
+              "id": "5c6e3fea-d58a-4ed1-913f-a44eeab803aa",
+              "name": "isSponsored",
+              "value": "={{ $json.isSponsored }}",
+              "type": "boolean"
+            },
+            {
+              "id": "5e2092a4-4ed3-4cb9-9aaf-a35690e638f7",
+              "name": "musicInfo",
+              "value": "={{ $json.musicInfo }}",
+              "type": "object"
+            },
+            {
+              "id": "f4b14db2-9cd6-45e4-a7d9-56c277cebc76",
+              "name": "isCommentsDisabled",
+              "value": "={{ $json.isCommentsDisabled }}",
+              "type": "boolean"
+            },
+            {
+              "id": "5f560306-547e-4a66-a417-3646ea52f666",
+              "name": "taggedUsers",
+              "value": "={{ $json.taggedUsers }}",
+              "type": "array"
+            },
+            {
+              "id": "ba995fdb-0c07-49f7-902f-f50125276cbd",
+              "name": "currentDate",
+              "value": "={{ $json.currentDate }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        420,
+        280
+      ],
+      "id": "f7ebf2e4-898a-48ea-b366-da9bec822b58",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "videoPlayCount",
+              "order": "descending"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        700,
+        280
+      ],
+      "id": "5dc52bb1-25e9-4e05-8151-b6ad8c28d5ab",
+      "name": "Sort"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 376107297,
+          "mode": "list",
+          "cachedResultName": "videos",
+          "cachedResultUrl": ""
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "caption": "={{ $json.caption }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ownerUsername",
+              "displayName": "ownerUsername",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "caption",
+              "displayName": "caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "hashtags",
+              "displayName": "hashtags",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "commentsCount",
+              "displayName": "commentsCount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "likesCount",
+              "displayName": "likesCount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "videoPlayCount",
+              "displayName": "videoPlayCount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "firstComment",
+              "displayName": "firstComment",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "latestComments",
+              "displayName": "latestComments",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "locationName",
+              "displayName": "locationName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ownerFullName",
+              "displayName": "ownerFullName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "videoDuration",
+              "displayName": "videoDuration",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "musicInfo",
+              "displayName": "musicInfo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "displayUrl",
+              "displayName": "displayUrl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "videoUrl",
+              "displayName": "videoUrl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "dimensionsHeight",
+              "displayName": "dimensionsHeight",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "dimensionsWidth",
+              "displayName": "dimensionsWidth",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "images",
+              "displayName": "images",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "mentions",
+              "displayName": "mentions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "type",
+              "displayName": "type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Url",
+              "displayName": "Url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "isCommentsDisabled",
+              "displayName": "isCommentsDisabled",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "videoViewCount",
+              "displayName": "videoViewCount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "childPosts",
+              "displayName": "childPosts",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "locationId",
+              "displayName": "locationId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ownerId",
+              "displayName": "ownerId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "taggedUsers",
+              "displayName": "taggedUsers",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "productType",
+              "displayName": "productType",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "isSponsored",
+              "displayName": "isSponsored",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "dataTime",
+              "displayName": "dataTime",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1140,
+        280
+      ],
+      "id": "1fac834e-ef32-4cc3-ac8f-9c2c694147dd",
+      "name": "Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": ""
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "timezone": "Asia/Tehran"
+        }
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "fb13b09b-6477-429e-abb6-ff3e8cb559f0",
+      "name": "Date & Time",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        180,
+        140
+      ],
+      "id": "aaabca06-b97d-4559-8bb8-39e9384c6757",
+      "name": "Merge"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        180
+      ],
+      "id": "1e4fd165-eda4-42ac-9222-1369fd4c68c6",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1360,
+        280
+      ],
+      "id": "364bd1e1-e8ea-407f-a730-477a91c740d7",
+      "name": "Wait",
+      "webhookId": "52fe6fb1-9243-4e6b-908c-85aed42504cf"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Date & Time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Sort",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3f872115-37e3-4007-81f6-88717fbeb15e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": ""
+  },
+  "id": "jcS7m790ZwTvSUud",
+  "tags": [
+    {
+      "createdAt": "2025-05-31T09:19:04.261Z",
+      "updatedAt": "2025-05-31T09:19:04.261Z",
+      "id": "EWS4BnuTUIUBdB1b",
+      "name": "N8N Course"
+    }
+  ]
+}
