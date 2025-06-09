@@ -44,7 +44,7 @@
 
 ### 5. پیکربندی گره‌ها 
 
-- با import کردن فایل [instaScraper.json](.\instaScraper.json) درون همین ریپازیتوری تنظیمات گره ها اعمال میشوند
+- با import کردن فایل [instaScraper.json](instaScraper.json) درون همین ریپازیتوری تنظیمات گره ها اعمال میشوند
 
 
 ### 6. ساختار داده‌ها
